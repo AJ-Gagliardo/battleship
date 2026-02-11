@@ -3,9 +3,16 @@ import Cell from "./Cell";
 
 export default function Board() {
   const cells = [];
+  const n = 4;
 
-  for (let i = 0; i < 5; i++) {
-    cells.push(<button key={i}>Cell{i}</button>);
+  for (let y = 0; y < n; y++) {
+    for (let x = 0; x < n; x++) {
+      cells.push(
+        <button key={`${x},${y}`}>
+          {x},{y}
+        </button>,
+      );
+    }
   }
   return <div>{cells}</div>;
 }
